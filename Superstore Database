@@ -1,0 +1,21 @@
+-- obtaining the names of each column from the table
+select *
+from superstore
+limit 5;
+
+-- SQL query that orders the item by price
+select item_name, price
+from superstore
+order by price desc;
+
+-- SQL query that only shows items with stock quantity greater than 30
+select item_name, stock_quantity
+from superstore
+where stock_quantity>30
+-- i then order the data in order of item with the greatest stock quantity
+order by stock_quantity desc;
+
+-- SQL query that shows which category of items sold the most
+select SUM(price), category
+from superstore
+group by category;
